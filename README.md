@@ -1,18 +1,144 @@
-<<<<<<< HEAD
-React + Vite
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+💬 ChatEase – Full Stack AI Chat Application
+# 💬 ChatEase
 
-Currently, two official plugins are available:
+ChatEase is a full-stack AI-powered chat application built using **React (Vite)** for the frontend and **FastAPI** for the backend.
 
-@vitejs/plugin-react uses Babel (or oxc when used in rolldown-vite) for Fast Refresh
-@vitejs/plugin-react-swc uses SWC for Fast Refresh
-React Compiler
-The React Compiler is enabled on this template. See this documentation for more information.
+It enables real-time interaction between users and an AI language model through a clean and responsive interface.
 
-Note: This will impact Vite dev & build performances.
+---
 
-Expanding the ESLint configuration
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the TS template for information on how to integrate TypeScript and typescript-eslint in your project.
-=======
-# ChatEase
->>>>>>> a9da15d88dcc76929dd0d46a9a0f6be741043eb3
+## 🚀 Features
+
+- 🤖 AI-powered chat responses
+- ⚡ FastAPI backend
+- ⚛️ React + Vite frontend
+- 🌐 REST API communication
+- 🔐 CORS-enabled backend
+- 📱 Responsive UI
+- 🧠 Modular LLM engine integration
+
+---
+
+## 🛠️ Tech Stack
+
+### 🔹 Frontend
+- React
+- Vite
+- JavaScript
+- CSS
+
+### 🔹 Backend
+- FastAPI
+- Python
+- Pydantic
+- Uvicorn
+
+---
+
+## 📂 Project Structure
+
+
+ChatEase/
+│
+├── backend/
+│ ├── main.py
+│ ├── llm_engine.py
+│
+├── frontend/
+│ ├── src/
+│ ├── public/
+│ ├── package.json
+│ ├── vite.config.js
+│
+├── README.md
+└── .gitignore
+
+
+---
+
+# ⚙️ Installation & Setup
+
+## 🔹 1️⃣ Clone the Repository
+
+
+git clone https://github.com/Benita-it/ChatEase.git
+
+cd ChatEase
+
+
+---
+
+## 🔹 2️⃣ Backend Setup (FastAPI)
+
+
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install fastapi uvicorn pydantic
+
+
+Run backend:
+
+
+uvicorn main:app --reload
+
+
+Backend runs at:
+
+http://127.0.0.1:8000
+
+
+API Docs:
+
+http://127.0.0.1:8000/docs
+
+
+---
+
+## 🔹 3️⃣ Frontend Setup (React + Vite)
+
+Open new terminal:
+
+
+cd frontend
+npm install
+npm run dev
+
+
+Frontend runs at:
+
+http://localhost:5173
+
+
+---
+
+## 📡 API Endpoints
+
+### 🔹 GET `/`
+Returns welcome message.
+
+### 🔹 POST `/chat`
+
+Request:
+```json
+{
+  "message": "Hello AI"
+}
+
+Response:
+
+{
+  "response": "AI generated reply"
+}
+🧠 How It Works
+
+User enters message in React frontend
+
+Frontend sends POST request to FastAPI /chat
+
+Backend processes message using llm_engine
+
+AI response is returned as JSON
+
+Frontend displays the response
+
